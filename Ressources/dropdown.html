@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="dropdown.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,18 +17,51 @@
             <a href="#">Accueil</a>
             <a href="#">Nos services</a>
             <a href="#">Contactez-nous</a>
-        </div>
-        <div class="centre">
-            <div class="text">
-                <p class="para1">Envoyez vos colid vers de nouveaux horizons</p>
-                <p class="para2">Une solution de livraison par drones,garantissant une distribution rapide et sûre pour vos colis vers plusieurs distinations.</p>
-                <button id="devis">Obtenez votre devis!</button>
-            </div>
-
-            <img src="drone.png"class="drone">
-        
-        </div>
-        
+        </div> 
     </header>
+    <div class="section1">
+        <div class="text">
+            <p class="para1">Envoyez vos colis vers<br>
+                 de nouveaux horizons</p>
+            <p class="para2">Une solution de livraison par drones,garantissant une distribution rapide et sûre pour vos colis vers plusieurs distinations.</p>
+            <button id="devis">Obtenez votre devis!</button>
+        </div>
+        <img src="drone.png" class="drone">
+        </div>
+    </div>
+        <div class="section2">
+            <h2 class="text1">Livraisons rapides par drones : 
+                Votre colis, notre priorité aérienne!
+            </h2>
+            <p class="text2">Livraisons nationales assurées avec deux vitesses adaptées à vos drones fiables garantissent distribution rapide et sécurisée de vos colid,où que vous soyez, en offrant une solution ligistique efficiente et innovante.</p>
+            <div class="prop">
+               <div><h3 class="title">Vitesse adaptée</h3>
+                <p class="desc">Standard ou Express,votre choix</p></div>
+               <div><h3 class="title">Sécurité garantie</h3>
+                <p  class="desc">Technologies avancées pour une livraison sûre</p></div>
+                <div><h3 class="title">Fiabilité constante</h3>
+                <p  class="desc">Drones pour des livraisons ponctuelles</p></div>
+                <div><h3 class="title">Service clientèle</h3>
+                <p  class="desc">Soutien attentif à chaque étape</p></div>
+            </div>
+        </div>
+        <div class="section3">
+            <h2 class="title1">SIMULATEUR</h2>
+            <div class="poid">
+            <label for="poids">Poids</label>
+            <input type="text" id="poids">
+            </div>
+            <div class="Dim">
+                <input type="text" id="langeur">
+                <span>X</span>
+                <input type="text" id="largeur">
+                <span>X</span>
+                <input type="text" id="hauteur">
+            </div>
+            <div class="distance">
+                <select id="userselect"></select>
+            </div>
+        </div>
+
 </body>
 </html>
