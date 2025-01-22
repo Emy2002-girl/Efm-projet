@@ -1,10 +1,10 @@
 body {
         background: linear-gradient(#829bd7, #e5bb87);
         width: 1280px;
-        height: 561px;
+        height: 721px;
         overflow-x: hidden;
         font-family: "Poppins", sans-serif;
-        top:200px;
+        top:740px;
     }
     
 .logo{
@@ -32,10 +32,12 @@ body {
     padding-left:20px;
 }
 .drone{
+    position: absolute;
     width: 686px;
     height: 445px;
-    margin-top: 119px;
-    margin-left: -20px;
+    top:179px;
+    left:750px;
+
 }
 .section1{
     display:flex;
@@ -71,10 +73,10 @@ body {
 .section2{
     position: absolute;
     background-color: white;
-    top: 577px;
+    top:737px;
     left: -1px;
     padding: 31px;
-    width: 953px;
+    width: 1470px;
 }
 .text1{
     font-weight: 900;
@@ -111,10 +113,10 @@ body {
     text-align: center;
 }
 .section3{
-    position: absolute;
-    width: 1017px;
-    height: 526px;
-    top: 1260px;
+   position: absolute;
+    width: 1535px;
+    height: 731px;
+    top: 1412px;
     border: 1px;
     background-color: #FFB860;
     left: 0px;
@@ -125,8 +127,54 @@ body {
    line-height: 55px;
    text-align: center;
 }
-.poid{
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 55px;
+#poids{
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 50px;
+    padding-right: 53px;
+} 
+.chihaja{
+   display: flex;
+    margin-top: 200px;
+  margin-left: 169px;
 }
+.dim{
+    margin-right: 61px;
+}
+#langeur{
+    width: 176px;
+    height: 50px;
+    border-radius: 10px;
+}
+#largeur{
+    width: 176px;
+    height: 50px;
+    border-radius: 10px;
+}
+#hauteur{
+    width: 176px;
+    height: 50px;
+    border-radius: 10px
+}
+#userselect{
+width: 176px;
+    height: 50px;
+    margin-top: 25px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+#calculer{
+   position: absolute;
+    top: 581px;
+    left: 634px;
+    width: 208px;
+    height: 48px;
+    background-color: #2958D2;
+    color: white;
+    border: none;
+    font-weight: 900;
+    border-radius: 10px;
+}
+
+
