@@ -2,7 +2,6 @@ body {
         background: linear-gradient(#829bd7, #e5bb87);
         width: 1280px;
         height: 734px;
-        overflow-x: hidden;
         font-family: "Poppins", sans-serif;
         top:740px;
     }
@@ -35,13 +34,8 @@ body {
     position: absolute;
     width: 686px;
     height: 445px;
-<<<<<<< HEAD
     top:143px;
     left:583px;
-=======
-    top:272px;
-    left:750px;
->>>>>>> 26579972fc098512df53650ffbddefe1a507f627
 
 }
 .section1{

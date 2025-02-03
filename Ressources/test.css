@@ -1,0 +1,44 @@
+.car1{
+    position: relative;
+    width: 82px;
+    height: 43px;
+    background-color: aqua;
+    border-radius: 15px 15px 0px 0px;
+    left: 14px;
+    top: 21px;
+}
+
+.car2{
+    position: relative;
+    width: 100px;
+    height: 38px;
+    background-color: aqua;
+    border-radius: 10px 10px 0 0;
+    top:25px;
+    /* margin-top:20px; */
+}
+/*
+.car3{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    top:38px;
+    left: 7px;
+}
+.car4{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    top: 38px;
+    left: 70px;
+}
+/* .carcontainer{
+    position:relative;
+    width:30px;
+    left:40px
+} */
+

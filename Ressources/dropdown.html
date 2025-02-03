@@ -62,7 +62,9 @@
                 </div>
                 <div>
                 <label>Distance:</label><br>
-                <select id="userselect"></select>
+                <select id="userselect">
+
+                </select>
                 </div>
             </div>
             <button id="calculer">Calculez maintenant!</button>
@@ -117,154 +119,6 @@
     </div>
 </div>
 <footer>2024 © - all rights reserved</footer>
-<script>
-    // Données JSON directement intégrées dans le script
-    const data = {
-        "tarifs": {
-            "standard": {
-                "base": 20,
-                "poids": 5,
-                "dimension": 0.1,
-                "distance": {
-                    "moins de 10 km": 5,
-                    "entre 10km et 50km": 10,
-                    "entre 50km et 100km": 15,
-                    "entre 100km et 300km": 30,
-                    "plus de 300km": 50
-                }
-            },
-            "express": {
-                "base": 30,
-                "poids": 7,
-                "dimension": 0.2,
-                "distance": {
-                    "moins de 10 km": 7,
-                    "entre 10km et 50km": 15,
-                    "entre 50km et 100km": 22,
-                    "entre 100km et 300km": 40,
-                    "plus de 300km": 65
-                }
-            }
-        }
-    };
-    let userselect=document.getElementById("userselect");
-    let tarif=data.tarifs.standard;
-    let tariff =data.tarifs.express;
-    if(tarif.distance){
-        for(let distance in tarif.distance){
-      let option=document.createElement("option");
-      option.value= distance;
-      option.textContent=`${distance}`;
-      userselect.appendChild(option);
-        }
-    };
-// Frais de livraison standard = Base + (Poids × Coefficient de poids) + (Somme des dimensions × Coefficient de
-// dimension) + Frais additionnels de distance
-// Formule de calcul pour la livraison express:
-// Frais de livraison express = Base express + (Poids × Coefficient de poids express) + (Somme des dimensions ×
-// Coefficient de dimension express) + Frais additionnels de distance express
-    let calcule=document.getElementById("calculer");
-    calcule.addEventListener("click",()=>{
-        const selectuser = document.getElementById("userselect").value;
-        const poid = parseFloat(document.getElementById("poids").value);
-        const largeur = parseFloat(document.getElementById("largeur").value);
-        const langeur=parseFloat(document.getElementById("langeur").value);
-        const hauteur=parseFloat(document.getElementById("hauteur").value);
-        let tarif = data.tarifs.standard;
-        let tariff = data.tarifs.express;
-
-        if(isNaN(poid)|| isNaN(largeur) ||isNaN(langeur)||isNaN(hauteur)){
-            alert("veuillez entrer un number valid");
-            return;
-        }
-        let resultStandard;
-        let resultExpress;
-        if(selectuser === "entre 100km et 300km"){
-            resultStandard = tarif.base + (poid * tarif.poids) +((largeur+langeur+hauteur)*tarif.dimension)+tarif.distance["entre 100km et 300km"];
-        }
-        else if(selectuser === "moins de 10 km"){
-             resultStandard = tarif.base + (poid * tarif.poids) + ((largeur + langeur + hauteur) * tarif.dimension) + tarif.distance["moins de 10 km"];
-        } else if (selectuser ===  "entre 10km et 50km") {
-           resultStandard = tarif.base + (poid * tarif.poids) + ((largeur + langeur + hauteur) * tarif.dimension) + tarif.distance[ "entre 10km et 50km"];
-        }
-         else if (selectuser === "entre 50km et 100km") {
-            resultStandard = tarif.base + (poid * tarif.poids) + ((largeur + langeur + hauteur) * tarif.dimension) + tarif.distance["entre 50km et 100km"];
-        }
-         else if (selectuser === "plus de 300km") {
-           resultStandard = tarif.base + (poid * tarif.poids) + ((largeur + langeur + hauteur) * tarif.dimension) + tarif.distance["plus de 300km"];
-         }
-          if (selectuser === "entre 100km et 300km") {
-             resultExpress = tariff.base + (poid * tariff.poids) + ((largeur + langeur + hauteur) * tariff.dimension) + tariff.distance["entre 100km et 300km"];
-        }
-        else if (selectuser === "moins de 10 km") {
-            resultExpress = tariff.base + (poid * tariff.poids) + ((largeur + langeur + hauteur) * tariff.dimension) + tariff.distance["moins de 10 km"];
-        } else if (selectuser === "entre 10km et 50km") {
-             resultExpress = tariff.base + (poid * tariff.poids) + ((largeur + langeur + hauteur) * tariff.dimension) + tariff.distance["entre 10km et 50km"];
-        }
-        else if (selectuser === "entre 50km et 100km") {
-             resultExpress = tariff.base + (poid * tariff.poids) + ((largeur + langeur + hauteur) * tariff.dimension) + tariff.distance["entre 50km et 100km"];
-        }
-        else if (selectuser === "plus de 300km") {
-            resultExpress = tariff.base + (poid * tariff.poids) + ((largeur + langeur + hauteur) * tariff.dimension) + tariff.distance["plus de 300km"];
-        }
-        document.getElementById("prix").innerHTML= `${resultStandard.toFixed(0)}MAD`;
-         document.getElementById("prixex").innerHTML = `${resultExpress.toFixed(0)} MAD`;
-
-        document.getElementById("section4").scrollIntoView({ behavior: "smooth" });
-    })
-  let imprimer = document.querySelector(".imprimer");
-
-    imprimer.addEventListener("click", () => {
-        const sectionToPrint = document.getElementById("section4"); // Récupérer la section à imprimer
-
-        // Créer un nouvel iframe temporaire pour afficher la section à imprimer
-        const iframe = document.createElement("iframe");
-        iframe.style.position = "absolute";
-        iframe.style.width = "0";
-        iframe.style.height = "0";
-        iframe.style.border = "none";
-        document.body.appendChild(iframe);
-
-        // Récupérer le contenu HTML de la section 4
-        const iframeDoc = iframe.contentWindow.document;
-
-        // Ajouter le contenu de la section 4 dans l'iframe
-        iframeDoc.open();
-        iframeDoc.write(`
-        <html>
-            <head>
-                <title>Impression Devis</title>
-                <style>
-                    /* Ajoutez ici des styles pour l'impression si nécessaire */
-                    body {
-                        font-family: Arial, sans-serif;
-                        margin: 20px;
-                    }
-                    .cont {
-                        padding: 20px;
-                        border: 1px solid #ccc;
-                    }
-                    .price {
-                        font-size: 20px;
-                        font-weight: bold;
-                    }
-                    /* Personnalisez ici le style pour l'impression */
-                </style>
-            </head>
-            <body>
-                ${sectionToPrint.innerHTML}
-            </body>
-        </html>
-    `);
-        iframeDoc.close();
-
-        // Attendre que le contenu soit complètement chargé avant d'imprimer
-        iframe.contentWindow.focus();
-        iframe.contentWindow.print();
-
-        // Supprimer l'iframe après l'impression
-        iframe.remove();
-    })
-</script>
+<script src="dronedrop.js"></script>
 </body>
 </html>
